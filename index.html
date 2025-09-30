@@ -43,46 +43,56 @@
       <p>Coléga (“the App”) is provided by <strong>Felipe Kleine Albers</strong> (“we”, “us”). This policy explains how information is handled when you use the App.</p>
 
       <div class="card">
-        <p><strong>Plain summary:</strong> We don’t create accounts or ask for your personal details. The App displays ads using Google AdMob, which may process device identifiers to deliver and measure advertising. The App fetches publicly available cafeteria menus from university websites. We also use a backend hosted on Vercel to optimize performance. We do not store or use personal data.</p>
+        <p><strong>Plain summary:</strong> We don’t create accounts or ask for your personal details. The App uses Google AdMob for ads and <strong>Google Firebase SDKs</strong> (e.g., Crashlytics, Analytics, Remote Config, Performance Monitoring) to keep the app reliable and improve features. These services may process device identifiers, IP address, and technical diagnostics. The App fetches publicly available cafeteria menus from university websites and uses a backend hosted on Vercel. <strong>We do not receive or store personal data on our own servers.</strong></p>
       </div>
 
       <h2 class="section">1) Information We Collect</h2>
-      <p><strong>We don’t directly collect personal information.</strong> While using the App, third-party services (notably Google AdMob and Vercel) may process:</p>
+      <p><strong>We don’t directly collect personal information.</strong> While using the App, third-party services (Google AdMob, <strong>Google Firebase</strong>, and Vercel) may process:</p>
       <ul>
-        <li>Device identifiers (e.g., Advertising ID), IP address, approximate location inferred from IP, and ad interaction signals (impressions/clicks), plus diagnostics.</li>
-        <li>Server logs automatically created by Vercel (e.g., IP address, timestamp, route) for security and performance. These logs are not accessed or stored by us.</li>
+        <li>Device and instance identifiers (e.g., Advertising ID for ads, Firebase Instance ID), IP address, app version, OS/device model, coarse location inferred from IP, and event/ad interaction signals.</li>
+        <li>Diagnostics and performance data (e.g., crash logs, stack traces, stability signals, network performance metrics).</li>
+        <li>Standard server logs created by Vercel (e.g., IP address, timestamp, route) for security and performance. These logs are not accessed or stored by us beyond what Vercel provides operationally.</li>
       </ul>
-      <p>These data are handled under the policies of the respective third parties. See <a target="_blank" rel="noopener" href="https://policies.google.com/technologies/ads">Google Advertising – Privacy & Terms</a> and <a target="_blank" rel="noopener" href="https://vercel.com/legal/privacy-policy">Vercel Privacy Policy</a>.</p>
+      <p>These data are handled under the respective third-party policies. See Google <a target="_blank" rel="noopener" href="https://policies.google.com/technologies/ads">Advertising – Privacy &amp; Terms</a>, <a target="_blank" rel="noopener" href="https://firebase.google.com/support/privacy">Firebase Privacy &amp; Security</a>, and <a target="_blank" rel="noopener" href="https://vercel.com/legal/privacy-policy">Vercel Privacy Policy</a>.</p>
 
       <h2 class="section">2) Ads & Analytics</h2>
-      <p>The App uses <strong>Google Mobile Ads (AdMob)</strong>. You can manage ad personalization in Android (<em>Settings → Google → Ads</em>) and via <a target="_blank" rel="noopener" href="https://adssettings.google.com">Google Ad Settings</a>.</p>
+      <p>The App uses <strong>Google Mobile Ads (AdMob)</strong> to display advertising. You can manage ad personalization on Android (<em>Settings → Google → Ads</em>) and via <a target="_blank" rel="noopener" href="https://adssettings.google.com">Google Ad Settings</a>.</p>
+      <p>If enabled in the App, <strong>Firebase Analytics</strong> helps us understand general usage patterns (e.g., screens visited, feature engagement). We configure it to avoid collecting information that directly identifies you.</p>
 
-      <h2 class="section">3) Backend Service</h2>
+      <h2 class="section">3) Firebase SDKs</h2>
+      <p>We integrate selected <strong>Firebase</strong> SDKs to ensure stability and improve the experience:</p>
+      <ul>
+        <li><strong>Crashlytics:</strong> collects crash reports and diagnostics to fix bugs and improve reliability.</li>
+        <li><strong>Analytics (optional):</strong> aggregates usage events to guide product decisions. We do not use it to build personal profiles.</li>
+        <li><strong>Remote Config (optional):</strong> fetches configuration values/feature flags to adjust the app without a new release.</li>
+        <li><strong>Performance Monitoring (optional):</strong> measures app startup time, network request latency, and similar metrics.</li>
+      </ul>
+      <p><em>Note:</em> “Optional” indicates components we may enable for feature rollout and quality; none of these give us access to information that directly identifies you.</p>
+
+      <h2 class="section">4) Backend Service</h2>
       <p>The App uses a backend hosted on Vercel to retrieve and optimize public university menu data. This backend does not store, share, or use personal data. Standard server logs are automatically generated by Vercel for operational purposes and are not used by us to identify users.</p>
 
-      <h2 class="section">4) Permissions</h2>
+      <h2 class="section">5) Permissions</h2>
       <ul>
-        <li><strong>Internet / Network state:</strong> to fetch menus and load ads.</li>
-        <li><strong>Notifications (optional):</strong> if enabled, used for simple app alerts (no personal data required).</li>
+        <li><strong>Internet / Network state:</strong> to fetch menus, load ads, and communicate with Firebase.</li>
+        <li><strong>Notifications (optional):</strong> if enabled, used for simple app alerts (no personal data required). If we use Firebase Cloud Messaging for notifications, it relies on a device token that does not directly identify you.</li>
       </ul>
 
-      <h2 class="section">5) Children’s Privacy</h2>
+      <h2 class="section">6) Children’s Privacy</h2>
       <p>The App targets a general audience and is not directed to children under 13. We do not knowingly collect children’s personal information.</p>
 
-      <h2 class="section">6) Data Retention</h2>
-      <p>We don’t store personal data on our own servers. Any ad-related data are retained by Google under its policies. Any logs created by Vercel are managed under Vercel’s policies.</p>
-
-      <h2 class="section">7) Security</h2>
-      <p>We aim to minimize data collection. Internet services carry inherent risks; keep your device updated.</p>
+      <h2 class="section">7) Data Retention</h2>
+      <p>We don’t store personal data on our own servers. Ad-related and Firebase diagnostic/analytics data are retained by Google under their respective policies and console settings. Vercel server logs are managed under Vercel’s policies.</p>
 
       <h2 class="section">8) International Transfers & Legal Bases</h2>
-      <p>Ad and hosting services may process data on servers outside your country. Where applicable (e.g., LGPD, GDPR), Google and Vercel act as independent controllers for their processing. We act as the app publisher and do not receive personal data.</p>
+      <p>Ad, analytics, and hosting services may process data on servers outside your country. Where applicable (e.g., LGPD, GDPR), Google (AdMob/Firebase) and Vercel act as independent controllers for their processing. We act as the app publisher and do not receive personal data.</p>
 
       <h2 class="section">9) Your Choices</h2>
       <ul>
         <li>Limit ad personalization in device settings and via <a target="_blank" rel="noopener" href="https://adssettings.google.com">Google Ad Settings</a>.</li>
+        <li>If offered in-app, you may opt out of Analytics collection via app settings; otherwise, you can limit data by device settings and using the app offline.</li>
         <li>Uninstall the App to stop all data flows from the App.</li>
-        <li>Contact us if you believe we hold personal data and want deletion (see Contact).</li>
+        <li>Contact us if you believe we hold personal data and want deletion (see Contact). We generally do not hold such data.</li>
       </ul>
 
       <h2 class="section">10) Changes</h2>
@@ -97,46 +107,56 @@
       <p>Coléga (“Aplicativo”) é oferecido por <strong>Felipe Kleine Albers</strong> (“nós”). Esta política explica como tratamos informações quando você usa o Aplicativo.</p>
 
       <div class="card">
-        <p><strong>Resumo claro:</strong> Não criamos contas nem solicitamos seus dados pessoais. O Aplicativo exibe anúncios via Google AdMob, que pode processar identificadores do dispositivo para entregar e mensurar publicidade. O Aplicativo busca cardápios públicos dos sites das universidades e usa um backend hospedado na Vercel para otimizar a performance. Não armazenamos ou utilizamos dados pessoais.</p>
+        <p><strong>Resumo claro:</strong> Não criamos contas nem solicitamos seus dados pessoais. O Aplicativo usa Google AdMob para anúncios e <strong>SDKs do Google Firebase</strong> (por exemplo, Crashlytics, Analytics, Remote Config, Performance Monitoring) para manter a estabilidade e melhorar recursos. Esses serviços podem processar identificadores do dispositivo, endereço IP e dados técnicos de diagnóstico. O Aplicativo busca cardápios públicos de sites das universidades e utiliza um backend hospedado na Vercel. <strong>Não recebemos nem armazenamos dados pessoais em nossos próprios servidores.</strong></p>
       </div>
 
       <h2 class="section">1) Informações Coletadas</h2>
-      <p><strong>Não coletamos dados pessoais diretamente.</strong> Ao usar o Aplicativo, serviços de terceiros (principalmente Google AdMob e Vercel) podem processar:</p>
+      <p><strong>Não coletamos dados pessoais diretamente.</strong> Ao usar o Aplicativo, serviços de terceiros (Google AdMob, <strong>Google Firebase</strong> e Vercel) podem processar:</p>
       <ul>
-        <li>Identificadores do dispositivo (ex.: Advertising ID), endereço IP, localização aproximada inferida do IP e sinais de interação com anúncios (impressões/cliques), além de diagnósticos.</li>
-        <li>Logs de servidor gerados automaticamente pela Vercel (ex.: IP, horário, rota) para segurança e desempenho. Esses logs não são acessados ou armazenados por nós.</li>
+        <li>Identificadores do dispositivo e de instância (ex.: Advertising ID para anúncios, Firebase Instance ID), endereço IP, versão do app, modelo do dispositivo/SO, localização aproximada inferida do IP e sinais de interação com anúncios/eventos.</li>
+        <li>Dados de diagnóstico e desempenho (ex.: relatórios de falhas, rastros de pilha, sinais de estabilidade, métricas de rede).</li>
+        <li>Logs padrão de servidor gerados pela Vercel (ex.: IP, horário, rota) para segurança e desempenho. Não acessamos nem armazenamos esses logs além do que a Vercel disponibiliza operacionalmente.</li>
       </ul>
-      <p>Esses dados são tratados conforme as políticas dos terceiros. Veja <a target="_blank" rel="noopener" href="https://policies.google.com/technologies/ads?hl=pt-BR">Política de Publicidade do Google</a> e <a target="_blank" rel="noopener" href="https://vercel.com/legal/privacy-policy">Política de Privacidade da Vercel</a>.</p>
+      <p>Esses dados são tratados conforme as políticas dos terceiros. Veja Google <a target="_blank" rel="noopener" href="https://policies.google.com/technologies/ads?hl=pt-BR">Publicidade – Privacidade e Termos</a>, <a target="_blank" rel="noopener" href="https://firebase.google.com/support/privacy?hl=pt-BR">Privacidade e Segurança do Firebase</a> e <a target="_blank" rel="noopener" href="https://vercel.com/legal/privacy-policy">Política de Privacidade da Vercel</a>.</p>
 
       <h2 class="section">2) Anúncios e Métricas</h2>
-      <p>O Aplicativo usa <strong>Google Mobile Ads (AdMob)</strong>. Você pode gerenciar a personalização de anúncios no Android (<em>Configurações → Google → Anúncios</em>) e em <a target="_blank" rel="noopener" href="https://adssettings.google.com">Configurações de Anúncios do Google</a>.</p>
+      <p>O Aplicativo usa <strong>Google Mobile Ads (AdMob)</strong> para exibir anúncios. Você pode gerenciar a personalização de anúncios no Android (<em>Configurações → Google → Anúncios</em>) e em <a target="_blank" rel="noopener" href="https://adssettings.google.com">Configurações de Anúncios do Google</a>.</p>
+      <p>Se habilitado no Aplicativo, o <strong>Firebase Analytics</strong> nos ajuda a entender padrões gerais de uso (ex.: telas visitadas, uso de recursos). Configuramos para evitar coleta de informação que identifique você diretamente.</p>
 
-      <h2 class="section">3) Backend</h2>
-      <p>O Aplicativo usa um backend hospedado na Vercel para buscar e otimizar dados públicos dos cardápios universitários. Esse backend não armazena, compartilha ou utiliza dados pessoais. Logs padrão de servidor são gerados automaticamente pela Vercel para fins operacionais e não são utilizados por nós para identificar usuários.</p>
-
-      <h2 class="section">4) Permissões</h2>
+      <h2 class="section">3) SDKs do Firebase</h2>
+      <p>Integramos alguns SDKs do <strong>Firebase</strong> para garantir estabilidade e melhorar a experiência:</p>
       <ul>
-        <li><strong>Internet / Estado da rede:</strong> para buscar cardápios e carregar anúncios.</li>
-        <li><strong>Notificações (opcional):</strong> se ativadas, usadas para avisos simples no app (sem dados pessoais).</li>
+        <li><strong>Crashlytics:</strong> coleta relatórios de falhas e diagnósticos para corrigir erros e aumentar a confiabilidade.</li>
+        <li><strong>Analytics (opcional):</strong> agrega eventos de uso para orientar decisões de produto. Não usamos para criar perfis pessoais.</li>
+        <li><strong>Remote Config (opcional):</strong> busca valores de configuração/feature flags para ajustar o app sem nova versão.</li>
+        <li><strong>Performance Monitoring (opcional):</strong> mede tempo de inicialização do app, latência de rede e métricas similares.</li>
+      </ul>
+      <p><em>Observação:</em> “Opcional” indica componentes que podemos habilitar para lançamento de recursos e qualidade; nenhum deles nos dá acesso a informações que identifiquem você diretamente.</p>
+
+      <h2 class="section">4) Backend</h2>
+      <p>O Aplicativo usa um backend hospedado na Vercel para buscar e otimizar dados públicos dos cardápios universitários. Esse backend não armazena, compartilha ou utiliza dados pessoais. Logs padrão são gerados automaticamente pela Vercel para fins operacionais e não são usados por nós para identificar usuários.</p>
+
+      <h2 class="section">5) Permissões</h2>
+      <ul>
+        <li><strong>Internet / Estado da rede:</strong> para buscar cardápios, carregar anúncios e se comunicar com o Firebase.</li>
+        <li><strong>Notificações (opcional):</strong> se ativadas, usadas para avisos simples no app (sem dados pessoais). Se utilizarmos o Firebase Cloud Messaging para notificações, ele usa um token do dispositivo que não o identifica diretamente.</li>
       </ul>
 
-      <h2 class="section">5) Privacidade de Crianças</h2>
+      <h2 class="section">6) Privacidade de Crianças</h2>
       <p>O Aplicativo é para público geral e não é direcionado a menores de 13 anos. Não coletamos intencionalmente dados pessoais de crianças.</p>
 
-      <h2 class="section">6) Retenção de Dados</h2>
-      <p>Não armazenamos dados pessoais em nossos servidores. Dados relacionados a anúncios são mantidos pelo Google. Logs criados pela Vercel são geridos conforme as políticas da Vercel.</p>
-
-      <h2 class="section">7) Segurança</h2>
-      <p>Buscamos minimizar a coleta de dados. Serviços de internet possuem riscos inerentes; mantenha seu dispositivo atualizado.</p>
+      <h2 class="section">7) Retenção de Dados</h2>
+      <p>Não armazenamos dados pessoais em nossos servidores. Dados de anúncios e diagnósticos/analytics do Firebase são mantidos pelo Google conforme suas políticas e configurações do console. Logs da Vercel são geridos conforme as políticas da Vercel.</p>
 
       <h2 class="section">8) Transferências Internacionais & Bases Legais</h2>
-      <p>Serviços de anúncios e hospedagem podem processar dados em servidores fora do seu país. Quando aplicável (ex.: LGPD, GDPR), o Google e a Vercel atuam como controladores independentes. Atuamos como publicador do app e não recebemos dados pessoais.</p>
+      <p>Serviços de anúncios, analytics e hospedagem podem processar dados em servidores fora do seu país. Quando aplicável (ex.: LGPD, GDPR), Google (AdMob/Firebase) e Vercel atuam como controladores independentes. Atuamos como publicador do app e não recebemos dados pessoais.</p>
 
       <h2 class="section">9) Suas Escolhas</h2>
       <ul>
         <li>Limite a personalização de anúncios nas configurações do dispositivo e em <a target="_blank" rel="noopener" href="https://adssettings.google.com">Configurações de Anúncios do Google</a>.</li>
+        <li>Se oferecido no app, você pode desativar a coleta do Analytics nas configurações internas; caso contrário, limite dados via configurações do dispositivo e uso offline.</li>
         <li>Desinstale o Aplicativo para interromper os fluxos de dados vindos do App.</li>
-        <li>Entre em contato se acreditar que mantemos dados pessoais e desejar exclusão (ver Contato).</li>
+        <li>Entre em contato se acreditar que mantemos dados pessoais e desejar exclusão (ver Contato). Em geral, não mantemos tais dados.</li>
       </ul>
 
       <h2 class="section">10) Alterações</h2>
